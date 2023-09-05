@@ -4,6 +4,8 @@ using MagicVilla_VillaAPI.Models.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+
 
 namespace MagicVilla_VillaAPI.Controllers
 {
@@ -84,7 +86,7 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
 
-        [HttpDelete("{id:int}", Name = "DeleteVilla")]
+        [HttpDelete("{id:int}", Name = "DeleteVilla")] [HttpDelete("{id:int}", Name = "DeleteVilla")]
         public IActionResult DeleteVilla(int id)
         {
             if (id == 0)
@@ -103,6 +105,7 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
         [HttpPut("{id:int}", Name = "UpdateVilla")]
+
         public IActionResult UpdateVilla(int id, [FromBody] VillaDto villaDto)
         {
             if (villaDto == null || id != villaDto.Id)
@@ -127,6 +130,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
 
         [HttpPatch("{id: int}", Name = "UpdatePartialVilla")]
+
         public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaDto> patchDto) 
         {
             if (patchDto== null || id == 0)
