@@ -129,7 +129,7 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
 
-        [HttpPatch("{id: int}", Name = "UpdatePartialVilla")]
+        [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
 
         public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaDto> patchDto) 
         {
