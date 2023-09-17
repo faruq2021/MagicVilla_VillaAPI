@@ -28,7 +28,7 @@ namespace MagicVilla_VillaAPI.Controllers
 
         }
 
-        [HttpGet("{id:int}",Name ="GetVilla" )]
+        [HttpGet("{id:int}", Name = "GetVilla")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -86,7 +86,8 @@ namespace MagicVilla_VillaAPI.Controllers
         }
 
 
-        [HttpDelete("{id:int}", Name = "DeleteVilla")] [HttpDelete("{id:int}", Name = "DeleteVilla")]
+        
+        [HttpDelete("{id:int}", Name = "DeleteVilla")]
         public IActionResult DeleteVilla(int id)
         {
             if (id == 0)
@@ -128,9 +129,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return NoContent();
         }
 
-
         [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
-
         public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaDto> patchDto) 
         {
             if (patchDto== null || id == 0)
